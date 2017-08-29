@@ -80,8 +80,10 @@ module.exports = function(grunt) {
         },
         watch: {
             scripts: {
-                files: ['Gruntfile.js', 'js/*.js', '*.html', 'css/*.css'],
+                files: ['Gruntfile.js', 'js/*.js', './*.html', 'css/*.css','less/*.less'],
+                // tasks: ['jshint', 'concat', 'cssmin', 'uglify', 'htmlmin'],
                 tasks: ['jshint', 'concat', 'cssmin', 'uglify', 'htmlmin'],
+                // tasks: ['concat', 'cssmin', 'uglify', 'htmlmin', 'less'],
                 options: {
                     spawn: false,
                 },
@@ -183,7 +185,7 @@ module.exports = function(grunt) {
     // grunt.registerTask('minall', ['uglify:buildall']);
     // grunt.registerTask('default', ['uglify:buildall', 'cssmin', 'htmlmin', 'imagemin']);
     // grunt.registerTask('default', ['uglify:buildall', 'cssmin', 'htmlmin']);
-    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'watch', 'jshint']);
+    grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'less', 'watch', 'jshint']);
     // grunt.registerTask('default', ['concat', 'cssmin', 'uglify', 'htmlmin', 'imagemin', 'jshint']);
 
     grunt.registerTask('pageLess', ['less:page']);
